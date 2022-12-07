@@ -1,6 +1,11 @@
 import Head from 'next/head';
 import { AvatarExample, AvatarSizes } from '../components/examples/Avatar';
 import { ColorButtons, SizeButtons } from '../components/examples/Buttons';
+import {
+    SelectColors,
+    SelectExamples,
+    SelectWithLabel,
+} from '../components/examples/Select';
 
 export default function Home() {
     return (
@@ -10,23 +15,40 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <h1 className="px-8 pt-4 m-0">Component Examples:</h1>
-            <main className="grid w-full grid-cols-1 p-8 lg:grid-cols-2 xl:grid-cols-3">
+            <div className="flex flex-col w-full gap-10 p-8 lg:flex-row">
                 <div className="flex flex-col">
-                    <div>
-                        <h2>Buttons:</h2>
+                    <div className="p-8 shadow-lg card bg-base-200/[0.25]">
+                        <h2 className="mt-0">Buttons:</h2>
                         <ColorButtons />
                         <SizeButtons />
                     </div>
                 </div>
 
+                <div className="flex flex-col flex-1">
+                    <div className="p-8 shadow-lg card bg-base-200/[0.25]">
+                        <h2>Select:</h2>
+                        <div className="flex flex-row justify-between gap-10">
+                            <div className="w-full lg:w-1/2">
+                                <SelectExamples />
+                                <SelectWithLabel />
+                            </div>
+                            <div className="w-full lg:w-1/2">
+                                <SelectColors />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="flex flex-col w-full gap-10 p-8 lg:flex-row">
                 <div className="flex flex-col">
-                    <div>
+                    <div className="p-8 shadow-lg card bg-base-200/[0.25]">
                         <h2>Avatar:</h2>
                         <AvatarExample />
                         <AvatarSizes />
                     </div>
                 </div>
-            </main>
+            </div>
         </div>
     );
 }

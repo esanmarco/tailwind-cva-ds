@@ -21,7 +21,7 @@ export function AvatarExample() {
 export function AvatarSizes() {
     return (
         <>
-            <div className="font-medium">Sizes:</div>
+            <h3 className="font-medium">Sizes:</h3>
             <div className="flex flex-row items-center gap-4 w-fit">
                 <div className="flex flex-col items-center">
                     x-small:

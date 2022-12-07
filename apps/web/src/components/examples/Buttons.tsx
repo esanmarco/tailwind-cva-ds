@@ -30,6 +30,9 @@ export function ColorButtons() {
                 <Button outlined onClick={buttonAction}>
                     Outlined Button (any color)
                 </Button>
+                <Button disabled onClick={buttonAction}>
+                    Disabled Button
+                </Button>
             </div>
         </>
     );

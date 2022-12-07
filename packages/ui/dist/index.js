@@ -50,7 +50,8 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var src_exports = {};
 __export(src_exports, {
   Avatar: () => Avatar,
-  Button: () => Button
+  Button: () => Button,
+  Select: () => Select
 });
 module.exports = __toCommonJS(src_exports);
 
@@ -59,6 +60,9 @@ var import_class_variance_authority = require("class-variance-authority");
 var import_jsx_runtime = require("react/jsx-runtime");
 var buttonStyles = (0, import_class_variance_authority.cva)("btn rounded-md capitalize", {
   variants: {
+    disabled: {
+      true: "btn-disabled cursor-not-allowed"
+    },
     color: {
       primary: "btn-primary",
       secondary: "btn-secondary",
@@ -94,6 +98,7 @@ var Button = (_a) => {
     fullWidth,
     children,
     outlined,
+    disabled,
     size
   } = _b, props = __objRest(_b, [
     "color",
@@ -101,11 +106,13 @@ var Button = (_a) => {
     "fullWidth",
     "children",
     "outlined",
+    "disabled",
     "size"
   ]);
   return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", __spreadProps(__spreadValues({}, props), {
+    disabled: disabled != null ? disabled : false,
     onClick,
-    className: buttonStyles({ color, fullWidth, size, outlined }),
+    className: buttonStyles({ color, fullWidth, size, outlined, disabled }),
     children
   }));
 };
@@ -175,8 +182,72 @@ var Avatar = (_a) => {
     }))
   });
 };
+
+// src/Select.tsx
+var import_class_variance_authority3 = require("class-variance-authority");
+var import_jsx_runtime3 = require("react/jsx-runtime");
+var selectStyles = (0, import_class_variance_authority3.cva)("select w-full select-bordered", {
+  variants: {
+    size: {
+      small: "select-sm",
+      medium: "",
+      large: "select-lg"
+    },
+    outlined: {
+      true: "select-bordered"
+    },
+    color: {
+      primary: "select-primary",
+      info: "select-info",
+      success: "select-success",
+      warning: "select-warning",
+      error: "select-error"
+    }
+  },
+  defaultVariants: {}
+});
+var Select = (_a) => {
+  var _b = _a, {
+    options,
+    color,
+    size,
+    outlined,
+    disabled,
+    label
+  } = _b, props = __objRest(_b, [
+    "options",
+    "color",
+    "size",
+    "outlined",
+    "disabled",
+    "label"
+  ]);
+  const labelColor = "text-" + color;
+  return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", {
+    className: `${label ? "form-control w-full" : ""}`,
+    children: [
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("select", __spreadProps(__spreadValues({
+        disabled: disabled != null ? disabled : false
+      }, props), {
+        className: selectStyles({ color, size, outlined }),
+        children: options.map((option) => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("option", {
+          value: option.value,
+          children: option.label
+        }, option.value))
+      })),
+      label && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", {
+        className: `label items-end`,
+        children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("label", {
+          className: `text-xs ${labelColor}`,
+          children: label
+        })
+      })
+    ]
+  });
+};
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Avatar,
-  Button
+  Button,
+  Select
 });

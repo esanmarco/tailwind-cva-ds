@@ -7,6 +7,9 @@ interface ButtonProps {
 
 const buttonStyles = cva('btn rounded-md capitalize', {
     variants: {
+        disabled: {
+            true: 'btn-disabled cursor-not-allowed',
+        },
         color: {
             primary: 'btn-primary',
             secondary: 'btn-secondary',
@@ -44,14 +47,16 @@ export const Button = ({
     fullWidth,
     children,
     outlined,
+    disabled,
     size,
     ...props
 }: Props) => {
     return (
         <button
             {...props}
+            disabled={disabled ?? false}
             onClick={onClick}
-            className={buttonStyles({ color, fullWidth, size, outlined })}
+            className={buttonStyles({ color, fullWidth, size, outlined, disabled })}
         >
             {children}
         </button>

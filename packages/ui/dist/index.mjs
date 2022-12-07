@@ -35,6 +35,9 @@ import { cva } from "class-variance-authority";
 import { jsx } from "react/jsx-runtime";
 var buttonStyles = cva("btn rounded-md capitalize", {
   variants: {
+    disabled: {
+      true: "btn-disabled cursor-not-allowed"
+    },
     color: {
       primary: "btn-primary",
       secondary: "btn-secondary",
@@ -70,6 +73,7 @@ var Button = (_a) => {
     fullWidth,
     children,
     outlined,
+    disabled,
     size
   } = _b, props = __objRest(_b, [
     "color",
@@ -77,11 +81,13 @@ var Button = (_a) => {
     "fullWidth",
     "children",
     "outlined",
+    "disabled",
     "size"
   ]);
   return /* @__PURE__ */ jsx("button", __spreadProps(__spreadValues({}, props), {
+    disabled: disabled != null ? disabled : false,
     onClick,
-    className: buttonStyles({ color, fullWidth, size, outlined }),
+    className: buttonStyles({ color, fullWidth, size, outlined, disabled }),
     children
   }));
 };
@@ -151,7 +157,71 @@ var Avatar = (_a) => {
     }))
   });
 };
+
+// src/Select.tsx
+import { cva as cva3 } from "class-variance-authority";
+import { jsx as jsx3, jsxs as jsxs2 } from "react/jsx-runtime";
+var selectStyles = cva3("select w-full select-bordered", {
+  variants: {
+    size: {
+      small: "select-sm",
+      medium: "",
+      large: "select-lg"
+    },
+    outlined: {
+      true: "select-bordered"
+    },
+    color: {
+      primary: "select-primary",
+      info: "select-info",
+      success: "select-success",
+      warning: "select-warning",
+      error: "select-error"
+    }
+  },
+  defaultVariants: {}
+});
+var Select = (_a) => {
+  var _b = _a, {
+    options,
+    color,
+    size,
+    outlined,
+    disabled,
+    label
+  } = _b, props = __objRest(_b, [
+    "options",
+    "color",
+    "size",
+    "outlined",
+    "disabled",
+    "label"
+  ]);
+  const labelColor = "text-" + color;
+  return /* @__PURE__ */ jsxs2("div", {
+    className: `${label ? "form-control w-full" : ""}`,
+    children: [
+      /* @__PURE__ */ jsx3("select", __spreadProps(__spreadValues({
+        disabled: disabled != null ? disabled : false
+      }, props), {
+        className: selectStyles({ color, size, outlined }),
+        children: options.map((option) => /* @__PURE__ */ jsx3("option", {
+          value: option.value,
+          children: option.label
+        }, option.value))
+      })),
+      label && /* @__PURE__ */ jsx3("div", {
+        className: `label items-end`,
+        children: /* @__PURE__ */ jsx3("label", {
+          className: `text-xs ${labelColor}`,
+          children: label
+        })
+      })
+    ]
+  });
+};
 export {
   Avatar,
-  Button
+  Button,
+  Select
 };
