@@ -1,16 +1,34 @@
 import { Button } from 'ui';
 
+const buttonAction = () => console.log('button clicked');
+
 export function ColorButtons() {
     return (
         <>
-            <div className="font-medium">Colors:</div>
+            <h3 className="font-medium">Colors:</h3>
             <div className="flex flex-row gap-4 mb-4">
-                <Button onClick={() => console.log('clicked')}>Primary Button</Button>
-                <Button color="secondary" onClick={() => console.log('clicked')}>
+                <Button onClick={buttonAction}>Primary Button</Button>
+                <Button color="secondary" onClick={buttonAction}>
                     Secondary Button
                 </Button>
-                <Button outlined onClick={() => console.log('clicked')}>
-                    Outlined Button
+                <Button color="active" onClick={buttonAction}>
+                    Active Button
+                </Button>
+            </div>
+            <div className="flex flex-row gap-4 mb-4">
+                <Button color="success" onClick={buttonAction}>
+                    Success Button
+                </Button>
+                <Button color="info" onClick={buttonAction}>
+                    Info Button
+                </Button>
+                <Button color="error" onClick={buttonAction}>
+                    Error Button
+                </Button>
+            </div>
+            <div className="flex flex-row gap-4 mb-4">
+                <Button outlined onClick={buttonAction}>
+                    Outlined Button (any color)
                 </Button>
             </div>
         </>
@@ -20,15 +38,15 @@ export function ColorButtons() {
 export function SizeButtons() {
     return (
         <>
-            <div className="font-medium">Sizes:</div>
+            <h3 className="font-medium">Sizes:</h3>
             <div className="flex flex-row items-end gap-3 p-0 mb-4 w-fit">
-                <Button onClick={() => console.log('clicked')} size="large">
+                <Button onClick={buttonAction} size="large">
                     Large Button
                 </Button>
-                <Button onClick={() => console.log('clicked')} size="medium">
+                <Button onClick={buttonAction} size="medium">
                     Medium Button
                 </Button>
-                <Button onClick={() => console.log('clicked')} size="small">
+                <Button onClick={buttonAction} size="small">
                     Small Button
                 </Button>
             </div>

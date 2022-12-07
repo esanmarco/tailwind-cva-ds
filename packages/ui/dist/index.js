@@ -49,6 +49,7 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 // src/index.tsx
 var src_exports = {};
 __export(src_exports, {
+  Avatar: () => Avatar,
   Button: () => Button
 });
 module.exports = __toCommonJS(src_exports);
@@ -56,71 +57,36 @@ module.exports = __toCommonJS(src_exports);
 // src/Button.tsx
 var import_class_variance_authority = require("class-variance-authority");
 var import_jsx_runtime = require("react/jsx-runtime");
-var buttonStyles = (0, import_class_variance_authority.cva)(
-  "flex flex-row items-center justify-center rounded-md no-underline",
-  {
-    variants: {
-      color: {
-        primary: "hover:bg-primary/[0.75]",
-        secondary: "hover:bg-secondary/[0.75]",
-        error: "hover:bg-error/[0.75]"
-      },
-      outlined: {
-        true: "border-2"
-      },
-      fullWidth: {
-        true: "w-full"
-      },
-      size: {
-        small: "px-2 py-1 text-sm",
-        medium: "px-3 py-2 text-base",
-        large: "px-4 py-3 text-lg"
-      }
+var buttonStyles = (0, import_class_variance_authority.cva)("btn rounded-md capitalize", {
+  variants: {
+    color: {
+      primary: "btn-primary",
+      secondary: "btn-secondary",
+      error: "btn-error",
+      success: "btn-success",
+      warning: "btn-warning",
+      info: "btn-info",
+      active: "btn-active"
     },
-    compoundVariants: [
-      {
-        outlined: true,
-        className: "bg-transparent"
-      },
-      {
-        outlined: true,
-        color: "primary",
-        className: "border-primary text-primary hover:bg-primary/[0.25]"
-      },
-      {
-        outlined: true,
-        color: "secondary",
-        className: "border-secondary text-secondary hover:bg-secondary/[0.25]"
-      },
-      {
-        outlined: true,
-        color: "error",
-        className: "border-error text-error hover:bg-error/[0.25]"
-      },
-      {
-        outlined: false,
-        color: "primary",
-        className: "bg-primary text-white"
-      },
-      {
-        outlined: false,
-        color: "secondary",
-        className: "bg-secondary text-white"
-      },
-      {
-        outlined: false,
-        color: "error",
-        className: "bg-error text-white"
-      }
-    ],
-    defaultVariants: {
-      color: "primary",
-      fullWidth: false,
-      size: "medium",
-      outlined: false
+    outlined: {
+      true: "btn-outline"
+    },
+    fullWidth: {
+      true: "w-full"
+    },
+    size: {
+      small: "btn-sm",
+      medium: "",
+      large: "btn-lg"
     }
+  },
+  defaultVariants: {
+    color: "primary",
+    fullWidth: false,
+    size: "medium",
+    outlined: false
   }
-);
+});
 var Button = (_a) => {
   var _b = _a, {
     color,
@@ -143,7 +109,74 @@ var Button = (_a) => {
     children
   }));
 };
+
+// src/Avatar.tsx
+var import_class_variance_authority2 = require("class-variance-authority");
+var import_jsx_runtime2 = require("react/jsx-runtime");
+var avatarStyles = (0, import_class_variance_authority2.cva)("bg-base-200 uppercase", {
+  variants: {
+    offline: {
+      true: "offline"
+    },
+    online: {
+      true: "online"
+    },
+    shape: {
+      circle: "rounded-full",
+      square: "rounded",
+      triangle: "mask-triangle",
+      hexagon: "mask-hexagon"
+    },
+    size: {
+      xsmall: "w-10 h-10",
+      small: "w-14 h-14",
+      medium: "w-20 h-20",
+      large: "w-24 h-24"
+    }
+  },
+  defaultVariants: {
+    shape: "circle",
+    size: "small",
+    offline: false,
+    online: false
+  }
+});
+var Avatar = (_a) => {
+  var _b = _a, {
+    placeholder,
+    offline,
+    online,
+    shape,
+    size,
+    img
+  } = _b, props = __objRest(_b, [
+    "placeholder",
+    "offline",
+    "online",
+    "shape",
+    "size",
+    "img"
+  ]);
+  const isOnline = online ? "online" : void 0;
+  const isOffline = offline ? "offline" : void 0;
+  return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", {
+    className: `avatar placeholder ${isOnline} ${isOffline}`,
+    children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", __spreadProps(__spreadValues({}, props), {
+      className: avatarStyles({ shape, size }),
+      children: [
+        placeholder && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", {
+          children: placeholder
+        }),
+        img && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("img", {
+          src: img,
+          alt: ""
+        })
+      ]
+    }))
+  });
+};
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
+  Avatar,
   Button
 });
