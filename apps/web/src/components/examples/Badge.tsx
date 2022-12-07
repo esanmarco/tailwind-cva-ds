@@ -1,6 +1,6 @@
 import { Badge } from 'ui';
 
-export function ColorBadges() {
+export function BadgeColors() {
     return (
         <>
             <h3 className="font-medium">Colors:</h3>
@@ -15,7 +15,7 @@ export function ColorBadges() {
     );
 }
 
-export function SizeBadges() {
+export function BadgeSizes() {
     return (
         <>
             <h3 className="font-medium">Sizes:</h3>

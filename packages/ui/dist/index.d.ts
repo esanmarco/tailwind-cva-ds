@@ -12,9 +12,9 @@ declare const buttonStyles: (props?: ({
     fullWidth?: boolean | null | undefined;
     size?: "small" | "medium" | "large" | null | undefined;
 } & class_variance_authority_dist_types.ClassProp) | undefined) => string;
-interface Props$1 extends ButtonProps, VariantProps<typeof buttonStyles> {
+interface Props$2 extends ButtonProps, VariantProps<typeof buttonStyles> {
 }
-declare const Button: ({ color, onClick, fullWidth, children, outlined, disabled, size, ...props }: Props$1) => JSX.Element;
+declare const Button: ({ color, onClick, fullWidth, children, outlined, disabled, size, ...props }: Props$2) => JSX.Element;
 
 declare const avatarStyles: (props?: ({
     offline?: boolean | null | undefined;
@@ -64,8 +64,18 @@ declare const badgeStyles: (props?: ({
 interface BadgeProps {
     children: React.ReactNode;
 }
-interface Props extends BadgeProps, VariantProps<typeof badgeStyles> {
+interface Props$1 extends BadgeProps, VariantProps<typeof badgeStyles> {
 }
-declare const Badge: ({ color, children, outlined, size, ...props }: Props) => JSX.Element;
+declare const Badge: ({ color, children, outlined, size, ...props }: Props$1) => JSX.Element;
 
-export { Avatar, AvatarProps, Badge, Button, Modal, ModalProps, Select, SelectProps };
+declare const alertStyles: (props?: ({
+    color?: "info" | "error" | "warning" | "success" | null | undefined;
+} & class_variance_authority_dist_types.ClassProp) | undefined) => string;
+interface AlertProps {
+    children: React.ReactNode;
+}
+interface Props extends AlertProps, VariantProps<typeof alertStyles> {
+}
+declare const Alert: ({ color, children, ...props }: Props) => JSX.Element;
+
+export { Alert, Avatar, AvatarProps, Badge, Button, Modal, ModalProps, Props$2 as Props, Select, SelectProps };

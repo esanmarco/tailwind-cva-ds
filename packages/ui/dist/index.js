@@ -49,6 +49,7 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 // src/index.tsx
 var src_exports = {};
 __export(src_exports, {
+  Alert: () => Alert,
   Avatar: () => Avatar,
   Badge: () => Badge,
   Button: () => Button,
@@ -335,8 +336,33 @@ var Badge = (_a) => {
     children
   }));
 };
+
+// src/Alert.tsx
+var import_class_variance_authority6 = require("class-variance-authority");
+var import_jsx_runtime6 = require("react/jsx-runtime");
+var alertStyles = (0, import_class_variance_authority6.cva)("", {
+  variants: {
+    color: {
+      info: "alert-info",
+      error: "alert-error",
+      warning: "alert-warning",
+      success: "alert-success"
+    }
+  },
+  defaultVariants: {
+    color: "info"
+  }
+});
+var Alert = (_a) => {
+  var _b = _a, { color, children } = _b, props = __objRest(_b, ["color", "children"]);
+  return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", __spreadProps(__spreadValues({}, props), {
+    className: `alert ${alertStyles({ color })} justify-start`,
+    children
+  }));
+};
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
+  Alert,
   Avatar,
   Badge,
   Button,

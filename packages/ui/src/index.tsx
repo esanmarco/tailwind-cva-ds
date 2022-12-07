@@ -2,4 +2,5 @@ export * from './Button';
 export * from './Avatar';
 export * from './Select';
 export * from './Modal';
-export * from './Badge';
+export { Badge } from './Badge';
+export { Alert } from './Alert';

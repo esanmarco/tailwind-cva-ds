@@ -308,7 +308,32 @@ var Badge = (_a) => {
     children
   }));
 };
+
+// src/Alert.tsx
+import { cva as cva6 } from "class-variance-authority";
+import { jsx as jsx6 } from "react/jsx-runtime";
+var alertStyles = cva6("", {
+  variants: {
+    color: {
+      info: "alert-info",
+      error: "alert-error",
+      warning: "alert-warning",
+      success: "alert-success"
+    }
+  },
+  defaultVariants: {
+    color: "info"
+  }
+});
+var Alert = (_a) => {
+  var _b = _a, { color, children } = _b, props = __objRest(_b, ["color", "children"]);
+  return /* @__PURE__ */ jsx6("span", __spreadProps(__spreadValues({}, props), {
+    className: `alert ${alertStyles({ color })} justify-start`,
+    children
+  }));
+};
 export {
+  Alert,
   Avatar,
   Badge,
   Button,
