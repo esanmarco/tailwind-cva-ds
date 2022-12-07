@@ -207,8 +207,7 @@ var selectStyles = (0, import_class_variance_authority3.cva)("select w-full sele
   },
   defaultVariants: {
     size: "medium",
-    outlined: false,
-    color: "primary"
+    outlined: false
   }
 });
 var Select = (_a) => {

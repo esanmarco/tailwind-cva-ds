@@ -21,7 +21,6 @@ const selectStyles = cva('select w-full select-bordered', {
     defaultVariants: {
         size: 'medium',
         outlined: false,
-        color: 'primary',
     },
 });
 

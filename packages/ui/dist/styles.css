@@ -1996,15 +1996,6 @@ html {
   background-color: hsl(var(--b2, var(--b1)) / var(--tw-bg-opacity));
 }
 
-.p-0 {
-  padding: 0px;
-}
-
-.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-}
-
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;

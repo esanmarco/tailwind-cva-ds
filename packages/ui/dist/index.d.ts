@@ -31,7 +31,7 @@ declare const Avatar: ({ placeholder, offline, online, shape, size, img, ...prop
 declare const selectStyles: (props?: ({
     size?: "small" | "medium" | "large" | null | undefined;
     outlined?: boolean | null | undefined;
-    color?: "primary" | "error" | "success" | "warning" | "info" | null | undefined;
+    color?: "primary" | "info" | "success" | "warning" | "error" | null | undefined;
 } & class_variance_authority_dist_types.ClassProp) | undefined) => string;
 interface SelectProps extends VariantProps<typeof selectStyles> {
     options: Array<{

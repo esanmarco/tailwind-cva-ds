@@ -181,8 +181,7 @@ var selectStyles = cva3("select w-full select-bordered", {
   },
   defaultVariants: {
     size: "medium",
-    outlined: false,
-    color: "primary"
+    outlined: false
   }
 });
 var Select = (_a) => {
