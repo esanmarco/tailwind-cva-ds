@@ -32,7 +32,14 @@ export function SelectExamples() {
 
 export function SelectWithLabel() {
     return (
-        <Select options={options} label="must be a valid email address" color="error" />
+        <>
+            With Label:
+            <Select
+                options={options}
+                label="must be a valid email address"
+                color="error"
+            />
+        </>
     );
 }
 
