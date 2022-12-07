@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { AvatarExample, AvatarSizes } from '../components/examples/Avatar';
 import { ColorButtons, SizeButtons } from '../components/examples/Buttons';
 import { ModalExample } from '../components/examples/Modal';
+import { ColorBadges, SizeBadges } from '../components/examples/Badge';
 import {
     SelectColors,
     SelectExamples,
@@ -55,6 +56,16 @@ export default function Home() {
                         <h2>Modal:</h2>
                         <div className="mx-auto">
                             <ModalExample />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex flex-col">
+                    <div className="p-8 w-80 shadow-lg card bg-base-200/[0.25]">
+                        <h2>Badge:</h2>
+                        <div className="mx-auto">
+                            <ColorBadges />
+                            <SizeBadges />
                         </div>
                     </div>
                 </div>
