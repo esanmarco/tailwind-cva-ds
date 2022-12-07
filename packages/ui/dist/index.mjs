@@ -303,10 +303,10 @@ var badgeStyles = cva5("", {
 });
 var Badge = (_a) => {
   var _b = _a, { color, children, outlined, size } = _b, props = __objRest(_b, ["color", "children", "outlined", "size"]);
-  return /* @__PURE__ */ jsx5("span", {
+  return /* @__PURE__ */ jsx5("span", __spreadProps(__spreadValues({}, props), {
     className: `badge ${badgeStyles({ color, outlined, size })}`,
     children
-  });
+  }));
 };
 export {
   Avatar,

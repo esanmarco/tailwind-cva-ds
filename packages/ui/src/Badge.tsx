@@ -32,7 +32,7 @@ export interface Props extends BadgeProps, VariantProps<typeof badgeStyles> {}
 
 export const Badge = ({ color, children, outlined, size, ...props }: Props) => {
     return (
-        <span className={`badge ${badgeStyles({ color, outlined, size })}`}>
+        <span {...props} className={`badge ${badgeStyles({ color, outlined, size })}`}>
             {children}
         </span>
     );
