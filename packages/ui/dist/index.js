@@ -50,6 +50,7 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var src_exports = {};
 __export(src_exports, {
   Avatar: () => Avatar,
+  Badge: () => Badge,
   Button: () => Button,
   Modal: () => Modal,
   Select: () => Select
@@ -301,9 +302,44 @@ var Modal = ({
     ]
   });
 };
+
+// src/Badge.tsx
+var import_class_variance_authority5 = require("class-variance-authority");
+var import_jsx_runtime5 = require("react/jsx-runtime");
+var badgeStyles = (0, import_class_variance_authority5.cva)("", {
+  variants: {
+    color: {
+      primary: "badge-primary",
+      secondary: "badge-secondary",
+      accent: "badge-accent",
+      ghost: "badge-ghost"
+    },
+    outlined: {
+      true: "badge-outline"
+    },
+    size: {
+      small: "badge-sm",
+      medium: "",
+      large: "badge-lg"
+    }
+  },
+  defaultVariants: {
+    color: "primary",
+    outlined: false,
+    size: "medium"
+  }
+});
+var Badge = (_a) => {
+  var _b = _a, { color, children, outlined, size } = _b, props = __objRest(_b, ["color", "children", "outlined", "size"]);
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", {
+    className: `badge ${badgeStyles({ color, outlined, size })}`,
+    children
+  });
+};
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Avatar,
+  Badge,
   Button,
   Modal,
   Select

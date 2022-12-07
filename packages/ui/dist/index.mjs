@@ -275,8 +275,43 @@ var Modal = ({
     ]
   });
 };
+
+// src/Badge.tsx
+import { cva as cva5 } from "class-variance-authority";
+import { jsx as jsx5 } from "react/jsx-runtime";
+var badgeStyles = cva5("", {
+  variants: {
+    color: {
+      primary: "badge-primary",
+      secondary: "badge-secondary",
+      accent: "badge-accent",
+      ghost: "badge-ghost"
+    },
+    outlined: {
+      true: "badge-outline"
+    },
+    size: {
+      small: "badge-sm",
+      medium: "",
+      large: "badge-lg"
+    }
+  },
+  defaultVariants: {
+    color: "primary",
+    outlined: false,
+    size: "medium"
+  }
+});
+var Badge = (_a) => {
+  var _b = _a, { color, children, outlined, size } = _b, props = __objRest(_b, ["color", "children", "outlined", "size"]);
+  return /* @__PURE__ */ jsx5("span", {
+    className: `badge ${badgeStyles({ color, outlined, size })}`,
+    children
+  });
+};
 export {
   Avatar,
+  Badge,
   Button,
   Modal,
   Select
