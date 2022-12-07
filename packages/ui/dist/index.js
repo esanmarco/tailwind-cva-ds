@@ -51,6 +51,7 @@ var src_exports = {};
 __export(src_exports, {
   Avatar: () => Avatar,
   Button: () => Button,
+  Modal: () => Modal,
   Select: () => Select
 });
 module.exports = __toCommonJS(src_exports);
@@ -111,7 +112,7 @@ var Button = (_a) => {
   ]);
   return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", __spreadProps(__spreadValues({}, props), {
     disabled: disabled != null ? disabled : false,
-    onClick,
+    onClick: onClick != null ? onClick : void 0,
     className: buttonStyles({ color, fullWidth, size, outlined, disabled }),
     children
   }));
@@ -204,7 +205,11 @@ var selectStyles = (0, import_class_variance_authority3.cva)("select w-full sele
       error: "select-error"
     }
   },
-  defaultVariants: {}
+  defaultVariants: {
+    size: "medium",
+    outlined: false,
+    color: "primary"
+  }
 });
 var Select = (_a) => {
   var _b = _a, {
@@ -245,9 +250,61 @@ var Select = (_a) => {
     ]
   });
 };
+
+// src/Modal.tsx
+var import_class_variance_authority4 = require("class-variance-authority");
+var import_jsx_runtime4 = require("react/jsx-runtime");
+var modalStyles = (0, import_class_variance_authority4.cva)("select w-full select-bordered", {
+  variants: {},
+  defaultVariants: {}
+});
+var Modal = ({
+  id,
+  children,
+  submit,
+  submitColor,
+  submitText,
+  triggerText,
+  triggerIcon
+}) => {
+  return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(import_jsx_runtime4.Fragment, {
+    children: [
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("label", {
+        htmlFor: id,
+        className: `m-0 hover:bg-transparent btn btn-active btn-ghost h-fit w-fit ${triggerIcon ? "rounded-full" : "".trim()}`,
+        children: triggerIcon ? triggerIcon : triggerText ? triggerText : "Open"
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("input", {
+        type: "checkbox",
+        id,
+        className: "modal-toggle"
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("label", {
+        htmlFor: id,
+        className: "cursor-pointer modal",
+        children: /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("label", {
+          className: "relative modal-box",
+          htmlFor: "",
+          children: [
+            children,
+            submit && /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", {
+              className: "modal-action",
+              children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Button, {
+                onClick: submit,
+                color: submitColor != null ? submitColor : "primary",
+                children: submitText != null ? submitText : "submit"
+              })
+            })
+          ]
+        })
+      })
+    ]
+  });
+};
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Avatar,
   Button,
+  Modal,
   Select
 });

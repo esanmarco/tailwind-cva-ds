@@ -3,7 +3,7 @@ import { VariantProps } from 'class-variance-authority';
 
 interface ButtonProps {
     children: React.ReactNode;
-    onClick: (data: any) => void | Promise<void>;
+    onClick?: (data: any) => void | Promise<void>;
 }
 declare const buttonStyles: (props?: ({
     disabled?: boolean | null | undefined;
@@ -44,4 +44,16 @@ interface SelectProps extends VariantProps<typeof selectStyles> {
 }
 declare const Select: ({ options, color, size, outlined, disabled, label, ...props }: SelectProps) => JSX.Element;
 
-export { Avatar, AvatarProps, Button, Props, Select, SelectProps };
+declare const modalStyles: (props?: ({} & class_variance_authority_dist_types.ClassProp) | undefined) => string;
+interface ModalProps extends VariantProps<typeof modalStyles> {
+    id: string;
+    children: React.ReactNode;
+    triggerText?: string;
+    triggerIcon?: React.ReactNode;
+    submit?: (data: any) => void | Promise<void>;
+    submitText?: string;
+    submitColor?: 'primary' | 'info' | 'success' | 'warning' | 'error';
+}
+declare const Modal: ({ id, children, submit, submitColor, submitText, triggerText, triggerIcon, }: ModalProps) => JSX.Element;
+
+export { Avatar, AvatarProps, Button, Modal, ModalProps, Props, Select, SelectProps };

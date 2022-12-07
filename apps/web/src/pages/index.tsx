@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { AvatarExample, AvatarSizes } from '../components/examples/Avatar';
 import { ColorButtons, SizeButtons } from '../components/examples/Buttons';
+import { ModalExample } from '../components/examples/Modal';
 import {
     SelectColors,
     SelectExamples,
@@ -46,6 +47,15 @@ export default function Home() {
                         <h2>Avatar:</h2>
                         <AvatarExample />
                         <AvatarSizes />
+                    </div>
+                </div>
+
+                <div className="flex flex-col">
+                    <div className="p-8 w-80 shadow-lg card bg-base-200/[0.25]">
+                        <h2>Modal:</h2>
+                        <div className="mx-auto">
+                            <ModalExample />
+                        </div>
                     </div>
                 </div>
             </div>

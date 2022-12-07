@@ -2,7 +2,7 @@ import { cva, VariantProps } from 'class-variance-authority';
 
 interface ButtonProps {
     children: React.ReactNode;
-    onClick: (data: any) => void | Promise<void>;
+    onClick?: (data: any) => void | Promise<void>;
 }
 
 const buttonStyles = cva('btn rounded-md capitalize', {
@@ -55,7 +55,7 @@ export const Button = ({
         <button
             {...props}
             disabled={disabled ?? false}
-            onClick={onClick}
+            onClick={onClick ?? undefined}
             className={buttonStyles({ color, fullWidth, size, outlined, disabled })}
         >
             {children}

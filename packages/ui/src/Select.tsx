@@ -18,7 +18,11 @@ const selectStyles = cva('select w-full select-bordered', {
             error: 'select-error',
         },
     },
-    defaultVariants: {},
+    defaultVariants: {
+        size: 'medium',
+        outlined: false,
+        color: 'primary',
+    },
 });
 
 export interface SelectProps extends VariantProps<typeof selectStyles> {

@@ -86,7 +86,7 @@ var Button = (_a) => {
   ]);
   return /* @__PURE__ */ jsx("button", __spreadProps(__spreadValues({}, props), {
     disabled: disabled != null ? disabled : false,
-    onClick,
+    onClick: onClick != null ? onClick : void 0,
     className: buttonStyles({ color, fullWidth, size, outlined, disabled }),
     children
   }));
@@ -179,7 +179,11 @@ var selectStyles = cva3("select w-full select-bordered", {
       error: "select-error"
     }
   },
-  defaultVariants: {}
+  defaultVariants: {
+    size: "medium",
+    outlined: false,
+    color: "primary"
+  }
 });
 var Select = (_a) => {
   var _b = _a, {
@@ -220,8 +224,60 @@ var Select = (_a) => {
     ]
   });
 };
+
+// src/Modal.tsx
+import { cva as cva4 } from "class-variance-authority";
+import { Fragment, jsx as jsx4, jsxs as jsxs3 } from "react/jsx-runtime";
+var modalStyles = cva4("select w-full select-bordered", {
+  variants: {},
+  defaultVariants: {}
+});
+var Modal = ({
+  id,
+  children,
+  submit,
+  submitColor,
+  submitText,
+  triggerText,
+  triggerIcon
+}) => {
+  return /* @__PURE__ */ jsxs3(Fragment, {
+    children: [
+      /* @__PURE__ */ jsx4("label", {
+        htmlFor: id,
+        className: `m-0 hover:bg-transparent btn btn-active btn-ghost h-fit w-fit ${triggerIcon ? "rounded-full" : "".trim()}`,
+        children: triggerIcon ? triggerIcon : triggerText ? triggerText : "Open"
+      }),
+      /* @__PURE__ */ jsx4("input", {
+        type: "checkbox",
+        id,
+        className: "modal-toggle"
+      }),
+      /* @__PURE__ */ jsx4("label", {
+        htmlFor: id,
+        className: "cursor-pointer modal",
+        children: /* @__PURE__ */ jsxs3("label", {
+          className: "relative modal-box",
+          htmlFor: "",
+          children: [
+            children,
+            submit && /* @__PURE__ */ jsx4("div", {
+              className: "modal-action",
+              children: /* @__PURE__ */ jsx4(Button, {
+                onClick: submit,
+                color: submitColor != null ? submitColor : "primary",
+                children: submitText != null ? submitText : "submit"
+              })
+            })
+          ]
+        })
+      })
+    ]
+  });
+};
 export {
   Avatar,
   Button,
+  Modal,
   Select
 };
