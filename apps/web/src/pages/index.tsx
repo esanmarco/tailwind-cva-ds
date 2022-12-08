@@ -4,12 +4,9 @@ import { ColorButtons, SizeButtons } from '../components/examples/Buttons';
 import { ModalExample } from '../components/examples/Modal';
 import { BadgeColors, BadgeSizes } from '../components/examples/Badge';
 import { AlertColors } from '../components/examples/Alert';
-import {
-    SelectColors,
-    SelectExamples,
-    SelectWithLabel,
-} from '../components/examples/Select';
+import { SelectColors, SelectExamples } from '../components/examples/Select';
 import { MenuExamples } from '../components/examples/Menu';
+import { InputColorExamples, InputSizeExamples } from '../components/examples/Input';
 
 export default function Home() {
     return (
@@ -34,10 +31,23 @@ export default function Home() {
                         <div className="flex flex-row justify-between gap-10">
                             <div className="w-full lg:w-1/2">
                                 <SelectExamples />
-                                <SelectWithLabel />
                             </div>
                             <div className="w-full lg:w-1/2">
                                 <SelectColors />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex flex-col flex-1">
+                    <div className="p-8 shadow-lg card bg-base-200/[0.25]">
+                        <h2>Input:</h2>
+                        <div className="flex flex-row justify-between gap-10">
+                            <div className="w-full lg:w-1/2">
+                                <InputSizeExamples />
+                            </div>
+                            <div className="w-full lg:w-1/2">
+                                <InputColorExamples />
                             </div>
                         </div>
                     </div>

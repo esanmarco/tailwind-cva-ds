@@ -31,7 +31,7 @@ declare const Avatar: ({ placeholder, offline, online, shape, size, img, ...prop
 declare const selectStyles: (props?: ({
     size?: "small" | "medium" | "large" | null | undefined;
     outlined?: boolean | null | undefined;
-    color?: "primary" | "error" | "success" | "warning" | "info" | null | undefined;
+    color?: "info" | "success" | "warning" | "error" | null | undefined;
 } & class_variance_authority_dist_types.ClassProp) | undefined) => string;
 interface SelectProps extends VariantProps<typeof selectStyles> {
     options: Array<{
@@ -86,4 +86,17 @@ interface AlertProps extends VariantProps<typeof alertStyles> {
 }
 declare function Alert({ color, children, ...props }: AlertProps): JSX.Element;
 
-export { Alert, AlertProps, Avatar, AvatarProps, Badge, BadgeProps, Button, Menu, Modal, ModalProps, Props, Select, SelectProps, menuProps };
+declare const inputStyles: (props?: ({
+    size?: "small" | "medium" | "large" | null | undefined;
+    color?: "info" | "success" | "warning" | "error" | null | undefined;
+} & class_variance_authority_dist_types.ClassProp) | undefined) => string;
+interface InputProps extends VariantProps<typeof inputStyles> {
+    placeholder?: string;
+    type: 'text' | 'password' | 'email' | 'number' | 'tel' | 'url';
+    value?: string | number;
+    defaultValue?: string | number;
+    helperText?: string;
+}
+declare const Input: ({ type, placeholder, value, defaultValue, helperText, color, size, ...props }: InputProps) => JSX.Element;
+
+export { Alert, AlertProps, Avatar, AvatarProps, Badge, BadgeProps, Button, Input, InputProps, Menu, Modal, ModalProps, Props, Select, SelectProps, menuProps };

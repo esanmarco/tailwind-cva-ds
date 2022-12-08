@@ -5,3 +5,4 @@ export * from './Modal';
 export * from './Menu';
 export * from './Badge';
 export * from './Alert';
+export * from './Input';

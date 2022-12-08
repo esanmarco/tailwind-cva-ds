@@ -53,6 +53,7 @@ __export(src_exports, {
   Avatar: () => Avatar,
   Badge: () => Badge,
   Button: () => Button,
+  Input: () => Input,
   Menu: () => Menu,
   Modal: () => Modal,
   Select: () => Select
@@ -201,7 +202,6 @@ var selectStyles = (0, import_class_variance_authority3.cva)("select w-full sele
       true: "select-bordered"
     },
     color: {
-      primary: "select-primary",
       info: "select-info",
       success: "select-success",
       warning: "select-warning",
@@ -398,12 +398,73 @@ function Alert(_a) {
     children
   }));
 }
+
+// src/Input.tsx
+var import_class_variance_authority8 = require("class-variance-authority");
+var import_jsx_runtime8 = require("react/jsx-runtime");
+var inputStyles = (0, import_class_variance_authority8.cva)("input input-bordered w-full", {
+  variants: {
+    size: {
+      small: "input-sm",
+      medium: "",
+      large: "input-lg"
+    },
+    color: {
+      info: "input-info",
+      success: "input-success",
+      warning: "input-warning",
+      error: "input-error"
+    }
+  },
+  defaultVariants: {
+    size: "medium"
+  }
+});
+var Input = (_a) => {
+  var _b = _a, {
+    type,
+    placeholder,
+    value,
+    defaultValue,
+    helperText,
+    color,
+    size
+  } = _b, props = __objRest(_b, [
+    "type",
+    "placeholder",
+    "value",
+    "defaultValue",
+    "helperText",
+    "color",
+    "size"
+  ]);
+  return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", {
+    children: [
+      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("input", __spreadProps(__spreadValues({}, props), {
+        type,
+        placeholder,
+        className: inputStyles({ color, size }),
+        value,
+        defaultValue
+      })),
+      helperText && /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("label", {
+        className: "label",
+        style: { color: "currentcolor" },
+        children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", {
+          className: "label-text-alt",
+          children: helperText
+        })
+      })
+    ]
+  });
+};
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Alert,
   Avatar,
   Badge,
   Button,
+  Input,
   Menu,
   Modal,
   Select

@@ -172,7 +172,6 @@ var selectStyles = cva3("select w-full select-bordered", {
       true: "select-bordered"
     },
     color: {
-      primary: "select-primary",
       info: "select-info",
       success: "select-success",
       warning: "select-warning",
@@ -369,11 +368,72 @@ function Alert(_a) {
     children
   }));
 }
+
+// src/Input.tsx
+import { cva as cva8 } from "class-variance-authority";
+import { jsx as jsx8, jsxs as jsxs5 } from "react/jsx-runtime";
+var inputStyles = cva8("input input-bordered w-full", {
+  variants: {
+    size: {
+      small: "input-sm",
+      medium: "",
+      large: "input-lg"
+    },
+    color: {
+      info: "input-info",
+      success: "input-success",
+      warning: "input-warning",
+      error: "input-error"
+    }
+  },
+  defaultVariants: {
+    size: "medium"
+  }
+});
+var Input = (_a) => {
+  var _b = _a, {
+    type,
+    placeholder,
+    value,
+    defaultValue,
+    helperText,
+    color,
+    size
+  } = _b, props = __objRest(_b, [
+    "type",
+    "placeholder",
+    "value",
+    "defaultValue",
+    "helperText",
+    "color",
+    "size"
+  ]);
+  return /* @__PURE__ */ jsxs5("div", {
+    children: [
+      /* @__PURE__ */ jsx8("input", __spreadProps(__spreadValues({}, props), {
+        type,
+        placeholder,
+        className: inputStyles({ color, size }),
+        value,
+        defaultValue
+      })),
+      helperText && /* @__PURE__ */ jsx8("label", {
+        className: "label",
+        style: { color: "currentcolor" },
+        children: /* @__PURE__ */ jsx8("span", {
+          className: "label-text-alt",
+          children: helperText
+        })
+      })
+    ]
+  });
+};
 export {
   Alert,
   Avatar,
   Badge,
   Button,
+  Input,
   Menu,
   Modal,
   Select

@@ -11,7 +11,6 @@ const selectStyles = cva('select w-full select-bordered', {
             true: 'select-bordered',
         },
         color: {
-            primary: 'select-primary',
             info: 'select-info',
             success: 'select-success',
             warning: 'select-warning',
