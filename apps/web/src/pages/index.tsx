@@ -62,7 +62,7 @@ export default function Home() {
             <div className="flex flex-col w-full gap-10 p-8 lg:flex-row">
                 <div className="flex flex-col">
                     <div className="p-8 shadow-lg card bg-base-200/[0.25]">
-                        <h2>Avatar:</h2>
+                        <h2 className="mt-0">Avatar:</h2>
                         <AvatarExample />
                         <AvatarSizes />
                         <AvatarOnlineStatus />
@@ -70,25 +70,27 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="flex flex-col">
-                    <div className="p-8 w-80 shadow-lg card bg-base-200/[0.25]">
+                <div className="flex flex-col flex-1">
+                    <div className="p-8 shadow-lg card bg-base-200/[0.25]">
                         <h2>Modal:</h2>
-                        <div className="mx-auto">
+                        <div className="flex flex-row justify-between gap-10">
                             <ModalExample />
                         </div>
                     </div>
                 </div>
 
-                <div className="flex flex-col">
-                    <div className="p-8 w-80 shadow-lg card bg-base-200/[0.25]">
+                <div className="flex flex-col flex-1">
+                    <div className="p-8 shadow-lg card bg-base-200/[0.25]">
                         <h2>Badge:</h2>
-                        <div className="mx-auto">
+                        <div className="flex flex-col justify-between gap-10">
                             <BadgeColors />
                             <BadgeSizes />
                         </div>
                     </div>
                 </div>
+            </div>
 
+            <div className="flex flex-col w-full gap-10 p-8 lg:flex-row">
                 <div className="flex flex-col">
                     <div className="p-8 w-80 shadow-lg card bg-base-200/[0.25]">
                         <h2>Alert:</h2>
