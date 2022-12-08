@@ -20,7 +20,7 @@ declare const avatarStyles: (props?: ({
     offline?: boolean | null | undefined;
     online?: boolean | null | undefined;
     shape?: "circle" | "square" | "triangle" | "hexagon" | null | undefined;
-    size?: "small" | "medium" | "large" | "xsmall" | null | undefined;
+    size?: "xsmall" | "small" | "medium" | "large" | null | undefined;
 } & class_variance_authority_dist_types.ClassProp) | undefined) => string;
 interface AvatarProps extends VariantProps<typeof avatarStyles> {
     img?: string;
@@ -31,7 +31,7 @@ declare const Avatar: ({ placeholder, offline, online, shape, size, img, ...prop
 declare const selectStyles: (props?: ({
     size?: "small" | "medium" | "large" | null | undefined;
     outlined?: boolean | null | undefined;
-    color?: "info" | "success" | "warning" | "error" | null | undefined;
+    color?: "error" | "success" | "warning" | "info" | null | undefined;
 } & class_variance_authority_dist_types.ClassProp) | undefined) => string;
 interface SelectProps extends VariantProps<typeof selectStyles> {
     options: Array<{
@@ -79,7 +79,7 @@ interface BadgeProps extends VariantProps<typeof badgeStyles> {
 declare const Badge: ({ color, children, outlined, size, ...props }: BadgeProps) => JSX.Element;
 
 declare const alertStyles: (props?: ({
-    color?: "info" | "error" | "warning" | "success" | null | undefined;
+    color?: "error" | "success" | "warning" | "info" | null | undefined;
 } & class_variance_authority_dist_types.ClassProp) | undefined) => string;
 interface AlertProps extends VariantProps<typeof alertStyles> {
     children: React.ReactNode;
@@ -88,7 +88,7 @@ declare function Alert({ color, children, ...props }: AlertProps): JSX.Element;
 
 declare const inputStyles: (props?: ({
     size?: "small" | "medium" | "large" | null | undefined;
-    color?: "info" | "success" | "warning" | "error" | null | undefined;
+    color?: "error" | "success" | "warning" | "info" | null | undefined;
 } & class_variance_authority_dist_types.ClassProp) | undefined) => string;
 interface InputProps extends VariantProps<typeof inputStyles> {
     placeholder?: string;

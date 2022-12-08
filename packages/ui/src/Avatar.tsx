@@ -12,8 +12,8 @@ const avatarStyles = cva('bg-base-200 uppercase', {
         shape: {
             circle: 'rounded-full',
             square: 'rounded',
-            triangle: 'mask-triangle',
-            hexagon: 'mask-hexagon',
+            triangle: 'mask mask-triangle',
+            hexagon: 'mask mask-hexagon',
         },
         size: {
             xsmall: 'w-10 h-10',

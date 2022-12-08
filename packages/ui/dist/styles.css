@@ -875,6 +875,15 @@ html {
   border-radius: 0px;
 }
 
+.mask {
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
 .menu {
   display: flex;
   flex-direction: column;
@@ -1841,15 +1850,6 @@ html {
   outline-offset: 2px;
 }
 
-.input-primary {
-  --tw-border-opacity: 1;
-  border-color: hsl(var(--p) / var(--tw-border-opacity));
-}
-
-.input-primary:focus {
-  outline: 2px solid hsl(var(--p));
-}
-
 .input-info {
   --tw-border-opacity: 1;
   border-color: hsl(var(--in) / var(--tw-border-opacity));
@@ -2148,15 +2148,6 @@ html {
 .select:focus {
   outline: 2px solid hsla(var(--bc) / 0.2);
   outline-offset: 2px;
-}
-
-.select-primary {
-  --tw-border-opacity: 1;
-  border-color: hsl(var(--p) / var(--tw-border-opacity));
-}
-
-.select-primary:focus {
-  outline: 2px solid hsl(var(--p));
 }
 
 .select-info {
@@ -2485,12 +2476,12 @@ html {
   position: relative;
 }
 
-.m-0 {
-  margin: 0px;
-}
-
 .m-1 {
   margin: 0.25rem;
+}
+
+.m-0 {
+  margin: 0px;
 }
 
 .h-10 {
@@ -2534,13 +2525,13 @@ html {
   width: 100%;
 }
 
+.w-52 {
+  width: 13rem;
+}
+
 .w-fit {
   width: -moz-fit-content;
   width: fit-content;
-}
-
-.w-52 {
-  width: 13rem;
 }
 
 .cursor-not-allowed {
@@ -2571,10 +2562,6 @@ html {
   border-radius: 0.375rem;
 }
 
-.rounded-none {
-  border-radius: 0px;
-}
-
 .bg-base-200 {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--b2, var(--b1)) / var(--tw-bg-opacity));
@@ -2583,10 +2570,6 @@ html {
 .bg-base-100 {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--b1) / var(--tw-bg-opacity));
-}
-
-.p-2 {
-  padding: 0.5rem;
 }
 
 .p-0 {
@@ -2622,15 +2605,10 @@ html {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.hover\:bg-transparent:hover {
-  background-color: transparent;
-}
-
-.hover\:bg-base-200:hover {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--b2, var(--b1)) / var(--tw-bg-opacity));
-}
-
 .hover\:bg-base-200\/\[0\.5\]:hover {
   background-color: hsl(var(--b2, var(--b1)) / 0.5);
+}
+
+.hover\:bg-transparent:hover {
+  background-color: transparent;
 }

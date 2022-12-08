@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { AvatarExample, AvatarSizes } from '../components/examples/Avatar';
+import { AvatarExample, AvatarMasks, AvatarSizes } from '../components/examples/Avatar';
 import { ColorButtons, SizeButtons } from '../components/examples/Buttons';
 import { ModalExample } from '../components/examples/Modal';
 import { BadgeColors, BadgeSizes } from '../components/examples/Badge';
@@ -60,6 +60,7 @@ export default function Home() {
                         <h2>Avatar:</h2>
                         <AvatarExample />
                         <AvatarSizes />
+                        <AvatarMasks />
                     </div>
                 </div>
 
