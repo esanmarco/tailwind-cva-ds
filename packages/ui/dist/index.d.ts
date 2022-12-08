@@ -12,9 +12,9 @@ declare const buttonStyles: (props?: ({
     fullWidth?: boolean | null | undefined;
     size?: "small" | "medium" | "large" | null | undefined;
 } & class_variance_authority_dist_types.ClassProp) | undefined) => string;
-interface Props$2 extends ButtonProps, VariantProps<typeof buttonStyles> {
+interface Props extends ButtonProps, VariantProps<typeof buttonStyles> {
 }
-declare const Button: ({ color, onClick, fullWidth, children, outlined, disabled, size, ...props }: Props$2) => JSX.Element;
+declare const Button: ({ color, onClick, fullWidth, children, outlined, disabled, size, ...props }: Props) => JSX.Element;
 
 declare const avatarStyles: (props?: ({
     offline?: boolean | null | undefined;
@@ -56,26 +56,34 @@ interface ModalProps extends VariantProps<typeof modalStyles> {
 }
 declare const Modal: ({ id, children, submit, submitColor, submitText, triggerText, triggerIcon, }: ModalProps) => JSX.Element;
 
+declare const menuStyles: (props?: ({
+    align?: "start" | "end" | null | undefined;
+} & class_variance_authority_dist_types.ClassProp) | undefined) => string;
+interface menuProps extends VariantProps<typeof menuStyles> {
+    items: Array<{
+        label: string;
+        onClick: (data: any) => void;
+    }>;
+    trigger: React.ReactDOM;
+}
+declare const Menu: ({ items, trigger, ...props }: menuProps) => JSX.Element;
+
 declare const badgeStyles: (props?: ({
     color?: "primary" | "secondary" | "accent" | "ghost" | null | undefined;
     outlined?: boolean | null | undefined;
     size?: "small" | "medium" | "large" | null | undefined;
 } & class_variance_authority_dist_types.ClassProp) | undefined) => string;
-interface BadgeProps {
+interface BadgeProps extends VariantProps<typeof badgeStyles> {
     children: React.ReactNode;
 }
-interface Props$1 extends BadgeProps, VariantProps<typeof badgeStyles> {
-}
-declare const Badge: ({ color, children, outlined, size, ...props }: Props$1) => JSX.Element;
+declare const Badge: ({ color, children, outlined, size, ...props }: BadgeProps) => JSX.Element;
 
 declare const alertStyles: (props?: ({
     color?: "info" | "error" | "warning" | "success" | null | undefined;
 } & class_variance_authority_dist_types.ClassProp) | undefined) => string;
-interface AlertProps {
+interface AlertProps extends VariantProps<typeof alertStyles> {
     children: React.ReactNode;
 }
-interface Props extends AlertProps, VariantProps<typeof alertStyles> {
-}
-declare const Alert: ({ color, children, ...props }: Props) => JSX.Element;
+declare function Alert({ color, children, ...props }: AlertProps): JSX.Element;
 
-export { Alert, Avatar, AvatarProps, Badge, Button, Modal, ModalProps, Props$2 as Props, Select, SelectProps };
+export { Alert, AlertProps, Avatar, AvatarProps, Badge, BadgeProps, Button, Menu, Modal, ModalProps, Props, Select, SelectProps, menuProps };

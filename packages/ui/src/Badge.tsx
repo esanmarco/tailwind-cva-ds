@@ -24,13 +24,11 @@ const badgeStyles = cva('', {
     },
 });
 
-interface BadgeProps {
+export interface BadgeProps extends VariantProps<typeof badgeStyles> {
     children: React.ReactNode;
 }
 
-export interface Props extends BadgeProps, VariantProps<typeof badgeStyles> {}
-
-export const Badge = ({ color, children, outlined, size, ...props }: Props) => {
+export const Badge = ({ color, children, outlined, size, ...props }: BadgeProps) => {
     return (
         <span {...props} className={`badge ${badgeStyles({ color, outlined, size })}`}>
             {children}

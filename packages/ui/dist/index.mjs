@@ -275,10 +275,47 @@ var Modal = ({
   });
 };
 
-// src/Badge.tsx
+// src/Menu.tsx
 import { cva as cva5 } from "class-variance-authority";
-import { jsx as jsx5 } from "react/jsx-runtime";
-var badgeStyles = cva5("", {
+import { jsx as jsx5, jsxs as jsxs4 } from "react/jsx-runtime";
+var menuStyles = cva5("dropdown", {
+  variants: {
+    align: {
+      start: "dropdown-start",
+      end: "dropdown-end"
+    }
+  },
+  defaultVariants: {
+    align: "end"
+  }
+});
+var Menu = (_a) => {
+  var _b = _a, { items, trigger } = _b, props = __objRest(_b, ["items", "trigger"]);
+  return /* @__PURE__ */ jsxs4("div", __spreadProps(__spreadValues({
+    className: menuStyles({})
+  }, props), {
+    children: [
+      /* @__PURE__ */ jsx5("label", {
+        tabIndex: 0,
+        children: trigger
+      }),
+      /* @__PURE__ */ jsx5("ul", {
+        tabIndex: 0,
+        className: "w-full p-0 m-1 shadow dropdown-content menu rounded-box bg-base-100 w-52",
+        children: items.map((i, index) => /* @__PURE__ */ jsx5("li", {
+          className: "px-4 w-52 py-2 m-0 cursor-pointer hover:bg-base-200/[0.5]",
+          onClick: i.onClick,
+          children: i.label
+        }, `item-${index}`))
+      })
+    ]
+  }));
+};
+
+// src/Badge.tsx
+import { cva as cva6 } from "class-variance-authority";
+import { jsx as jsx6 } from "react/jsx-runtime";
+var badgeStyles = cva6("", {
   variants: {
     color: {
       primary: "badge-primary",
@@ -303,16 +340,16 @@ var badgeStyles = cva5("", {
 });
 var Badge = (_a) => {
   var _b = _a, { color, children, outlined, size } = _b, props = __objRest(_b, ["color", "children", "outlined", "size"]);
-  return /* @__PURE__ */ jsx5("span", __spreadProps(__spreadValues({}, props), {
+  return /* @__PURE__ */ jsx6("span", __spreadProps(__spreadValues({}, props), {
     className: `badge ${badgeStyles({ color, outlined, size })}`,
     children
   }));
 };
 
 // src/Alert.tsx
-import { cva as cva6 } from "class-variance-authority";
-import { jsx as jsx6 } from "react/jsx-runtime";
-var alertStyles = cva6("", {
+import { cva as cva7 } from "class-variance-authority";
+import { jsx as jsx7 } from "react/jsx-runtime";
+var alertStyles = cva7("", {
   variants: {
     color: {
       info: "alert-info",
@@ -325,18 +362,19 @@ var alertStyles = cva6("", {
     color: "info"
   }
 });
-var Alert = (_a) => {
+function Alert(_a) {
   var _b = _a, { color, children } = _b, props = __objRest(_b, ["color", "children"]);
-  return /* @__PURE__ */ jsx6("span", __spreadProps(__spreadValues({}, props), {
+  return /* @__PURE__ */ jsx7("span", __spreadProps(__spreadValues({}, props), {
     className: `alert ${alertStyles({ color })} justify-start`,
     children
   }));
-};
+}
 export {
   Alert,
   Avatar,
   Badge,
   Button,
+  Menu,
   Modal,
   Select
 };

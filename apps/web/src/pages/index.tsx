@@ -9,6 +9,7 @@ import {
     SelectExamples,
     SelectWithLabel,
 } from '../components/examples/Select';
+import { MenuExamples } from '../components/examples/Menu';
 
 export default function Home() {
     return (
@@ -76,6 +77,15 @@ export default function Home() {
                         <h2>Alert:</h2>
                         <div className="mx-auto">
                             <AlertColors />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex flex-col">
+                    <div className="p-8 w-80 shadow-lg card bg-base-200/[0.25]">
+                        <h2>Dropdown Menu:</h2>
+                        <div className="mx-auto">
+                            <MenuExamples />
                         </div>
                     </div>
                 </div>

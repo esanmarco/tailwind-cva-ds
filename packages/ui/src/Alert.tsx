@@ -14,16 +14,14 @@ const alertStyles = cva('', {
     },
 });
 
-interface AlertProps {
+export interface AlertProps extends VariantProps<typeof alertStyles> {
     children: React.ReactNode;
 }
 
-export interface Props extends AlertProps, VariantProps<typeof alertStyles> {}
-
-export const Alert = ({ color, children, ...props }: Props) => {
+export function Alert({ color, children, ...props }: AlertProps) {
     return (
         <span {...props} className={`alert ${alertStyles({ color })} justify-start`}>
             {children}
         </span>
     );
-};
+}

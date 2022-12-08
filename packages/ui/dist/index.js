@@ -53,6 +53,7 @@ __export(src_exports, {
   Avatar: () => Avatar,
   Badge: () => Badge,
   Button: () => Button,
+  Menu: () => Menu,
   Modal: () => Modal,
   Select: () => Select
 });
@@ -303,10 +304,47 @@ var Modal = ({
   });
 };
 
-// src/Badge.tsx
+// src/Menu.tsx
 var import_class_variance_authority5 = require("class-variance-authority");
 var import_jsx_runtime5 = require("react/jsx-runtime");
-var badgeStyles = (0, import_class_variance_authority5.cva)("", {
+var menuStyles = (0, import_class_variance_authority5.cva)("dropdown", {
+  variants: {
+    align: {
+      start: "dropdown-start",
+      end: "dropdown-end"
+    }
+  },
+  defaultVariants: {
+    align: "end"
+  }
+});
+var Menu = (_a) => {
+  var _b = _a, { items, trigger } = _b, props = __objRest(_b, ["items", "trigger"]);
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", __spreadProps(__spreadValues({
+    className: menuStyles({})
+  }, props), {
+    children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("label", {
+        tabIndex: 0,
+        children: trigger
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("ul", {
+        tabIndex: 0,
+        className: "w-full p-0 m-1 shadow dropdown-content menu rounded-box bg-base-100 w-52",
+        children: items.map((i, index) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("li", {
+          className: "px-4 w-52 py-2 m-0 cursor-pointer hover:bg-base-200/[0.5]",
+          onClick: i.onClick,
+          children: i.label
+        }, `item-${index}`))
+      })
+    ]
+  }));
+};
+
+// src/Badge.tsx
+var import_class_variance_authority6 = require("class-variance-authority");
+var import_jsx_runtime6 = require("react/jsx-runtime");
+var badgeStyles = (0, import_class_variance_authority6.cva)("", {
   variants: {
     color: {
       primary: "badge-primary",
@@ -331,16 +369,16 @@ var badgeStyles = (0, import_class_variance_authority5.cva)("", {
 });
 var Badge = (_a) => {
   var _b = _a, { color, children, outlined, size } = _b, props = __objRest(_b, ["color", "children", "outlined", "size"]);
-  return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", __spreadProps(__spreadValues({}, props), {
+  return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", __spreadProps(__spreadValues({}, props), {
     className: `badge ${badgeStyles({ color, outlined, size })}`,
     children
   }));
 };
 
 // src/Alert.tsx
-var import_class_variance_authority6 = require("class-variance-authority");
-var import_jsx_runtime6 = require("react/jsx-runtime");
-var alertStyles = (0, import_class_variance_authority6.cva)("", {
+var import_class_variance_authority7 = require("class-variance-authority");
+var import_jsx_runtime7 = require("react/jsx-runtime");
+var alertStyles = (0, import_class_variance_authority7.cva)("", {
   variants: {
     color: {
       info: "alert-info",
@@ -353,19 +391,20 @@ var alertStyles = (0, import_class_variance_authority6.cva)("", {
     color: "info"
   }
 });
-var Alert = (_a) => {
+function Alert(_a) {
   var _b = _a, { color, children } = _b, props = __objRest(_b, ["color", "children"]);
-  return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", __spreadProps(__spreadValues({}, props), {
+  return /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", __spreadProps(__spreadValues({}, props), {
     className: `alert ${alertStyles({ color })} justify-start`,
     children
   }));
-};
+}
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Alert,
   Avatar,
   Badge,
   Button,
+  Menu,
   Modal,
   Select
 });
