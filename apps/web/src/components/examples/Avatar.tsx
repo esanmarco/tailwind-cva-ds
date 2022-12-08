@@ -29,15 +29,33 @@ export function AvatarSizes() {
                 </div>
                 <div className="flex flex-col items-center">
                     small:
-                    <Avatar offline />
+                    <Avatar />
                 </div>
                 <div className="flex flex-col items-center">
                     medium:
-                    <Avatar online size="medium" />
+                    <Avatar size="medium" />
                 </div>
                 <div className="flex flex-col items-center">
                     large:
                     <Avatar size="large" />
+                </div>
+            </div>
+        </>
+    );
+}
+
+export function AvatarOnlineStatus() {
+    return (
+        <>
+            <h3 className="mb-0 font-medium">Status:</h3>
+            <div className="flex flex-row gap-4 mb-8">
+                <div className="flex flex-col items-center">
+                    offline:
+                    <Avatar offline />
+                </div>
+                <div className="flex flex-col items-center">
+                    online:
+                    <Avatar online />
                 </div>
             </div>
         </>
