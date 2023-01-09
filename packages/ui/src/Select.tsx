@@ -23,7 +23,7 @@ const selectStyles = cva('select w-full select-bordered', {
     },
 });
 
-export interface SelectProps extends VariantProps<typeof selectStyles> {
+export interface SelectProps extends HTMLSelectElement, VariantProps<typeof selectStyles> {
     options: Array<{
         value: string;
         label: string;

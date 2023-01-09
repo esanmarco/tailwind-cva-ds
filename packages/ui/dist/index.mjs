@@ -384,10 +384,15 @@ var inputStyles = cva8("input input-bordered w-full", {
       success: "input-success",
       warning: "input-warning",
       error: "input-error"
+    },
+    type: {
+      text: "",
+      password: "input-password"
     }
   },
   defaultVariants: {
-    size: "medium"
+    size: "medium",
+    type: "text"
   }
 });
 var Input = (_a) => {

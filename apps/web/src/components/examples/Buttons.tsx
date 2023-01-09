@@ -7,7 +7,8 @@ export function ColorButtons() {
         <>
             <h3 className="font-medium">Colors:</h3>
             <div className="flex flex-row gap-4 mb-4">
-                <Button onClick={buttonAction}>Primary Button</Button>
+                <Button data-testid="test">Primary Button</Button>
+
                 <Button color="secondary" onClick={buttonAction}>
                     Secondary Button
                 </Button>

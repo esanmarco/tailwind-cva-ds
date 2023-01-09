@@ -414,10 +414,15 @@ var inputStyles = (0, import_class_variance_authority8.cva)("input input-bordere
       success: "input-success",
       warning: "input-warning",
       error: "input-error"
+    },
+    type: {
+      text: "",
+      password: "input-password"
     }
   },
   defaultVariants: {
-    size: "medium"
+    size: "medium",
+    type: "text"
   }
 });
 var Input = (_a) => {

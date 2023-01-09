@@ -13,15 +13,19 @@ const inputStyles = cva('input input-bordered w-full', {
             warning: 'input-warning',
             error: 'input-error',
         },
+        type: {
+            text: '',
+            password: 'input-password',
+        },
     },
     defaultVariants: {
         size: 'medium',
+        type: 'text',
     },
 });
 
-export interface InputProps extends VariantProps<typeof inputStyles> {
+export interface InputProps extends HTMLInputElement, VariantProps<typeof inputStyles> {
     placeholder?: string;
-    type: 'text' | 'password' | 'email' | 'number' | 'tel' | 'url';
     value?: string | number;
     defaultValue?: string | number;
     helperText?: string;

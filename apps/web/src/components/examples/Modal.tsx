@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Button, Modal } from 'ui';
+import { Modal } from 'ui';
 
 export function ModalExample() {
     return (

@@ -1,10 +1,6 @@
 import * as class_variance_authority_dist_types from 'class-variance-authority/dist/types';
 import { VariantProps } from 'class-variance-authority';
 
-interface ButtonProps {
-    children: React.ReactNode;
-    onClick?: (data: any) => void | Promise<void>;
-}
 declare const buttonStyles: (props?: ({
     disabled?: boolean | null | undefined;
     color?: "primary" | "secondary" | "error" | "success" | "warning" | "info" | "active" | null | undefined;
@@ -12,17 +8,19 @@ declare const buttonStyles: (props?: ({
     fullWidth?: boolean | null | undefined;
     size?: "small" | "medium" | "large" | null | undefined;
 } & class_variance_authority_dist_types.ClassProp) | undefined) => string;
-interface Props extends ButtonProps, VariantProps<typeof buttonStyles> {
+interface ButtonProps extends HTMLButtonElement, VariantProps<typeof buttonStyles> {
+    children: React.ReactNode;
+    onClick?: (data?: unknown) => void | Promise<void>;
 }
-declare const Button: ({ color, onClick, fullWidth, children, outlined, disabled, size, ...props }: Props) => JSX.Element;
+declare const Button: ({ color, onClick, fullWidth, children, outlined, disabled, size, ...props }: ButtonProps) => JSX.Element;
 
 declare const avatarStyles: (props?: ({
     offline?: boolean | null | undefined;
     online?: boolean | null | undefined;
     shape?: "circle" | "square" | "triangle" | "hexagon" | null | undefined;
-    size?: "xsmall" | "small" | "medium" | "large" | null | undefined;
+    size?: "small" | "medium" | "large" | "xsmall" | null | undefined;
 } & class_variance_authority_dist_types.ClassProp) | undefined) => string;
-interface AvatarProps extends VariantProps<typeof avatarStyles> {
+interface AvatarProps extends HTMLDivElement, VariantProps<typeof avatarStyles> {
     img?: string;
     placeholder?: string;
 }
@@ -31,9 +29,9 @@ declare const Avatar: ({ placeholder, offline, online, shape, size, img, ...prop
 declare const selectStyles: (props?: ({
     size?: "small" | "medium" | "large" | null | undefined;
     outlined?: boolean | null | undefined;
-    color?: "error" | "success" | "warning" | "info" | null | undefined;
+    color?: "info" | "success" | "warning" | "error" | null | undefined;
 } & class_variance_authority_dist_types.ClassProp) | undefined) => string;
-interface SelectProps extends VariantProps<typeof selectStyles> {
+interface SelectProps extends HTMLSelectElement, VariantProps<typeof selectStyles> {
     options: Array<{
         value: string;
         label: string;
@@ -73,7 +71,7 @@ declare const badgeStyles: (props?: ({
     outlined?: boolean | null | undefined;
     size?: "small" | "medium" | "large" | null | undefined;
 } & class_variance_authority_dist_types.ClassProp) | undefined) => string;
-interface BadgeProps extends VariantProps<typeof badgeStyles> {
+interface BadgeProps extends HTMLSpanElement, VariantProps<typeof badgeStyles> {
     children: React.ReactNode;
 }
 declare const Badge: ({ color, children, outlined, size, ...props }: BadgeProps) => JSX.Element;
@@ -81,7 +79,7 @@ declare const Badge: ({ color, children, outlined, size, ...props }: BadgeProps)
 declare const alertStyles: (props?: ({
     color?: "error" | "success" | "warning" | "info" | null | undefined;
 } & class_variance_authority_dist_types.ClassProp) | undefined) => string;
-interface AlertProps extends VariantProps<typeof alertStyles> {
+interface AlertProps extends HTMLSpanElement, VariantProps<typeof alertStyles> {
     children: React.ReactNode;
 }
 declare function Alert({ color, children, ...props }: AlertProps): JSX.Element;
@@ -89,14 +87,14 @@ declare function Alert({ color, children, ...props }: AlertProps): JSX.Element;
 declare const inputStyles: (props?: ({
     size?: "small" | "medium" | "large" | null | undefined;
     color?: "error" | "success" | "warning" | "info" | null | undefined;
+    type?: "text" | "password" | null | undefined;
 } & class_variance_authority_dist_types.ClassProp) | undefined) => string;
-interface InputProps extends VariantProps<typeof inputStyles> {
+interface InputProps extends HTMLInputElement, VariantProps<typeof inputStyles> {
     placeholder?: string;
-    type: 'text' | 'password' | 'email' | 'number' | 'tel' | 'url';
     value?: string | number;
     defaultValue?: string | number;
     helperText?: string;
 }
 declare const Input: ({ type, placeholder, value, defaultValue, helperText, color, size, ...props }: InputProps) => JSX.Element;
 
-export { Alert, AlertProps, Avatar, AvatarProps, Badge, BadgeProps, Button, Input, InputProps, Menu, Modal, ModalProps, Props, Select, SelectProps, menuProps };
+export { Alert, AlertProps, Avatar, AvatarProps, Badge, BadgeProps, Button, ButtonProps, Input, InputProps, Menu, Modal, ModalProps, Select, SelectProps, menuProps };
