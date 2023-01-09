@@ -30,7 +30,7 @@ const avatarStyles = cva('bg-base-200 uppercase', {
     },
 });
 
-export interface AvatarProps extends HTMLDivElement, VariantProps<typeof avatarStyles> {
+export interface AvatarProps extends VariantProps<typeof avatarStyles> {
     img?: string;
     placeholder?: string;
 }

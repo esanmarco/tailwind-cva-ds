@@ -14,7 +14,7 @@ const alertStyles = cva('', {
     },
 });
 
-export interface AlertProps extends HTMLSpanElement, VariantProps<typeof alertStyles> {
+export interface AlertProps extends VariantProps<typeof alertStyles> {
     children: React.ReactNode;
 }
 

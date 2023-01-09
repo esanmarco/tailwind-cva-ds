@@ -93,7 +93,8 @@ var buttonStyles = (0, import_class_variance_authority.cva)("btn rounded-md capi
     color: "primary",
     fullWidth: false,
     size: "medium",
-    outlined: false
+    outlined: false,
+    disabled: false
   }
 });
 var Button = (_a) => {

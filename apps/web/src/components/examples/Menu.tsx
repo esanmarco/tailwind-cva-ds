@@ -7,12 +7,14 @@ const items = [
     { label: 'Item 3', onClick: () => console.log('Item 3 clicked') },
 ];
 
-const trigger = <Button color="secondary">Open Menu</Button>;
-
 export function MenuExamples() {
     return (
         <>
-            <Menu align="start" trigger={trigger} items={items} />
+            <Menu
+                align="start"
+                trigger={<Button color="secondary">Open Menu</Button>}
+                items={items}
+            />
         </>
     );
 }

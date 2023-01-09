@@ -22,7 +22,7 @@ export interface menuProps extends VariantProps<typeof menuStyles> {
         label: string;
         onClick: (data: any) => void;
     }>;
-    trigger: React.ReactDOM;
+    trigger: React.ReactElement<any, any>;
 }
 
 export const Menu = ({ items, trigger, ...props }: menuProps) => {

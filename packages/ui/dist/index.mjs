@@ -63,7 +63,8 @@ var buttonStyles = cva("btn rounded-md capitalize", {
     color: "primary",
     fullWidth: false,
     size: "medium",
-    outlined: false
+    outlined: false,
+    disabled: false
   }
 });
 var Button = (_a) => {

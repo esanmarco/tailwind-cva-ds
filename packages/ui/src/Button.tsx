@@ -31,10 +31,11 @@ const buttonStyles = cva('btn rounded-md capitalize', {
         fullWidth: false,
         size: 'medium',
         outlined: false,
+        disabled: false,
     },
 });
 
-export interface ButtonProps extends HTMLButtonElement, VariantProps<typeof buttonStyles> {
+export interface ButtonProps extends VariantProps<typeof buttonStyles> {
     children: React.ReactNode;
     onClick?: (data?: unknown) => void | Promise<void>;
 }

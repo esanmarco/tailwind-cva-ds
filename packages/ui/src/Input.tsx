@@ -24,7 +24,7 @@ const inputStyles = cva('input input-bordered w-full', {
     },
 });
 
-export interface InputProps extends HTMLInputElement, VariantProps<typeof inputStyles> {
+export interface InputProps extends VariantProps<typeof inputStyles> {
     placeholder?: string;
     value?: string | number;
     defaultValue?: string | number;
